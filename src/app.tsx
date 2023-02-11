@@ -6,11 +6,9 @@ import ReactDOM from 'react-dom/client';
 const App = () => (<div>
     <h1>Hello, ESBUILD!</h1>
     <Panel />
-    <Panel />
 </div>)
 
-// Panel Component
-const Panel = () => <h2>I'm a Panel</h2>
+const Panel = () => <h2>I'm a Panel TES 1T</h2>
 
 // Mount component
 const root = ReactDOM.createRoot(
