@@ -1,0 +1,13 @@
+{
+  "minify": true,
+  "bundle": true,
+  "platform": "browser",
+  "define": {
+    "process.env.NODE_ENV": "\"production\""
+  },
+  "externals": [
+    "react",
+    "react-dom"
+  ],
+  "target": "es6"
+}
