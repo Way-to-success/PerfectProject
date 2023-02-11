@@ -5,5 +5,5 @@ const res = require('esbuild').buildSync({
 	format: 'cjs',
 	sourcemap: true,
 	outfile: 'dist/output.js',
-	// external: ['react', 'react-dom'],
+	external: ['react', 'react-dom'],
 })
