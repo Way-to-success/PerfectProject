@@ -6,7 +6,6 @@ module.exports = {
 	extends: [
 		'plugin:react/recommended',
 		'xo',
-		'./.eslintrc.format.js',
 	],
 	overrides: [
 		{
