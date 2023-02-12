@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom/client';
 import {getAnalytics} from 'firebase/analytics';
 import {initializeApp} from 'firebase/app';
 
-import App from './App';
+import App from './app';
 
 import './index.css';
 // TODO: Add SDKs for Firebase products that you want to use
@@ -26,6 +26,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 	<React.StrictMode>
 		<App />
