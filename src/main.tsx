@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom/client';
 import {getAnalytics} from 'firebase/analytics';
 import {initializeApp} from 'firebase/app';
 
-import App from './app';
+import App from './App';
 
 import './index.css';
 // TODO: Add SDKs for Firebase products that you want to use
