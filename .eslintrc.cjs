@@ -4,20 +4,40 @@ module.exports = {
 		es2021: true,
 	},
 	extends: [
+		'eslint:recommended',
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended",
 		'plugin:react/recommended',
+		'plugin:import/recommended',
+		"plugin:import/typescript",
 		'xo',
 	],
 	overrides: [
 		{
-			extends: [
-				'xo-typescript',
-			],
 			files: [
 				'*.ts',
 				'*.tsx',
 			],
 			rules: {
-				
+				'import/order': [
+					'error',
+					{
+						groups: ['builtin', 'external', 'internal'],
+						pathGroups: [
+							{
+								pattern: '{react,react-dom/**}',
+								group: 'external',
+								position: 'before',
+							},
+						],
+						pathGroupsExcludedImportTypes: ['react'],
+						'newlines-between': 'always',
+						alphabetize: {
+							order: 'asc',
+							caseInsensitive: true,
+						},
+					},
+				],
 				'@typescript-eslint/no-unused-vars': [
 					1,
 					{
@@ -577,7 +597,6 @@ module.exports = {
 					},
 				],
 				'no-spaced-func': 'error',
-				'no-tabs': 'error',
 				'no-ternary': 'off',
 				'no-underscore-dangle': [
 					0,
@@ -666,22 +685,6 @@ module.exports = {
 						jsx: 'never',
 					},
 				],
-				'import/order': [
-					'error',
-					{
-						'newlines-between': 'always',
-						pathGroups: [
-							{
-								'pattern': '{@*,@*/**}',
-								'group': 'external',
-								'position': 'after',
-							},
-						],
-						groups: [
-							['builtin', 'external', 'internal'],
-						],
-					},
-				],
 				'import/newline-after-import': 'error',
 				'import/no-restricted-paths': 'off',
 				'import/max-dependencies': [
@@ -721,16 +724,20 @@ module.exports = {
 						webpackChunknameFormat: '[0-9a-zA-Z-_/.]+',
 					},
 				],
-			
+				"indent": [2, "tab"],
+				"no-tabs": 0
 			}
 		},
 	],
 	parserOptions: {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
+		project: "./tsconfig.json",
 	},
 	plugins: [
 		'react',
+		'react-hooks'
 	],
-	rules: {},
+	rules: {
+	},
 };
